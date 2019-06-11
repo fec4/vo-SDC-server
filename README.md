@@ -4,10 +4,7 @@
 
 ## Related Projects
 
-  - https://github.com/5uper5quad/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/fec4/vo-SDC-proxy
 
 ## Table of Contents
 
