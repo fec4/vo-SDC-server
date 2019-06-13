@@ -6,17 +6,17 @@ var path = home + '/Cam5-5ervice/db/data/';
 let start = 1;
 let max = 50;
 let current = 1;
-console.time('Time Start!');
+console.time('Data for cassandra completed in');
 
 let seedEntry = (start, max, current) => {
   if (start > max) {
-    console.timeEnd('Time Stop. Data generation completed in ----');
+    console.timeEnd('Data for cassandra completed in');
     current = 1;
     return;
   } else {
     let string = "";
     for(var i = 0; i <= 200000; i++) {
-      let generatedData = generate.generateData;
+      let generatedData = generate.generateData();
       let entry = `${current}|${generatedData.type}|${generatedData.description}|${generatedData.tags}|${generatedData.price}|${generatedData.location}|${generatedData.image}|${generatedData.rating}|${generatedData.numRatings}`;
       string += entry + '\n';
       current++;

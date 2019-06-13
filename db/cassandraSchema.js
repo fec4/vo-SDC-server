@@ -4,7 +4,7 @@ const generate = require('./helpers/dataGenerator');
 var firstEntry = generate.generateData;
 firstEntry.id = 0;
 
-var config = {keyspace: "BareBnB", hosts: ["127.0.0.1:9042"]};
+var config = {keyspace: "bareBnB", hosts: ["127.0.0.1:9042"]};
 cassandra.connect(config);
 
 var homeSchema = new Schema({

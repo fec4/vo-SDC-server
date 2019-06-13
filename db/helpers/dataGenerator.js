@@ -9,17 +9,17 @@ let tags = ['Private', 'Self check-in', 'Sparkling clean', 'Superhost', 'Great c
 module.exports.generateData = () => {
   const entry = {};
 
-  entry.type = types[Math.floor(math.random() * types.length)];
+  entry.type = types[Math.floor(Math.random() * types.length)];
 
   entry.description = faker.lorem.paragraph();
 
-  entry.tags = tags[Math.floor(math.random() * tags.length)];
+  entry.tags = tags[Math.floor(Math.random() * tags.length)];
 
   entry.price = faker.commerce.price();
 
   entry.location = faker.address.city();
 
-  entry.image = pictures.data[Math.floor(math.random() * pictures.data.length)];
+  entry.image = pictures.data[Math.floor(Math.random() * pictures.data.length)];
 
   entry.rating = faker.random.number(1, 5);
 
