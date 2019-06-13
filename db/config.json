@@ -1,0 +1,7 @@
+{
+  "host": "localHost",
+  "user": "postgres_user",
+  "pw": "password",
+  "db": "bareBnb",
+  "port": "5432"
+}

@@ -28,6 +28,6 @@ app.listen(port, () => {
         res.status(200).send(result)
       }
     })
-  }) 
+  })
 
 module.exports = app

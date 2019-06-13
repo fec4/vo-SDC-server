@@ -4,10 +4,7 @@
 
 ## Related Projects
 
-  - https://github.com/5uper5quad/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/fec4/vo-SDC-proxy
 
 ## Table of Contents
 
@@ -17,7 +14,7 @@
 
 ## Usage
 
-> serve service: npm run start 
+> serve service: npm run start
 "start": "nodemon --ignore node_modules server"
 
 service runs on port :3001
@@ -58,4 +55,20 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
+## API
 
+POSTing to /homes
+- this would allow user to add a new picture/listing to the database
+
+GET to /homes
+- this would return the most recent listings
+
+PUT to /homes
+- this would update the listing matching the listing ID of the request
+
+DELETE to /homes
+- this would remove a listing matching the listing ID of the request
+
+GET to /related
+- GET requests to this endpoint will query the database with homes matching the query
+- or homes within the area of search
