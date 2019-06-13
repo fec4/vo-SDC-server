@@ -1,0 +1,7 @@
+{
+  "host": "add host here",
+  "user": "add user name here",
+  "pw": "add password here",
+  "db": "add db name here",
+  "port": "add port here"
+}
