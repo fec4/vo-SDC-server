@@ -12,22 +12,24 @@ const user = config.user;
 const pw = config.pw;
 const db = config.db;
 const port = config.port;
-const conString = `postgres://${user}:${pw}@${host}:${port}/${db}`;
+const conString = `postgresql://${user}:${pw}@${host}:${port}/${db}`;
+const tableString = `CREATE TABLE IF NOT EXISTS home( id INT, type VARCHAR, description VARCHAR, tags VARCHAR, price VARCHAR, location VARCHAR, image VARCHAR, rating SMALLINT, "numRatings" SMALLINT );`
 
 //connecting to Database
 
-const pool = new Pool();
-
-pool.query('SELECT NOW()', (err, res) => {
-  console.log(err, res)
-  pool.end()
-})
+const pool = new Pool({
+  connectionString: conString
+});
 
 const client = new Client({
   connectionString: conString
 })
 
 client.connect();
+
+client.query(tableString, (err, res) => {
+  console.log(err, res);
+});
 
 const executeQuery = (targetTable) => {
   const execute = (target, callback) => {
@@ -44,8 +46,8 @@ const executeQuery = (targetTable) => {
   //Executing Copy Function
 
   execute(targetTable, (err) => {
-    if (err) return console.log(`Error in Truncate TAble: ${err}`)
-    var stream = client.query(copyFrom(`COPY ${targetTable} FROM CSV HEADER STDIN`));
+    if (err) return console.log(`Error in Truncate Table: ${err}`)
+    var stream = client.query(copyFrom(`COPY ${targetTable} FROM STDIN DELIMITER '|' CSV`));
     var fileStream = fs.createReadStream(inputFile);
 
     fileStream.on('error', (err) => {
