@@ -13,7 +13,7 @@ const pw = config.pw;
 const db = config.db;
 const port = config.port;
 const conString = `postgresql://${user}:${pw}@${host}:${port}/${db}`;
-const tableString = `CREATE TABLE IF NOT EXISTS home( type VARCHAR, description VARCHAR, tags VARCHAR, price VARCHAR, location VARCHAR, image VARCHAR, rating SMALLINT, "numRatings" SMALLINT );`
+const tableString = `CREATE TABLE IF NOT EXISTS home( id INT, type VARCHAR, description VARCHAR, tags VARCHAR, price VARCHAR, location VARCHAR, image VARCHAR, rating SMALLINT, "numRatings" SMALLINT );`
 
 //connecting to Database
 

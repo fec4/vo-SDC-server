@@ -21,9 +21,9 @@ module.exports.generateData = () => {
 
   entry.image = pictures.data[Math.floor(Math.random() * pictures.data.length)];
 
-  entry.rating = faker.random.number(1, 5);
+  entry.rating = Math.floor(Math.random() * 5);
 
-  entry.numRatings = faker.random.number(0, 9999);
+  entry.numRatings = Math.floor(Math.random() * 9999);
 
   return entry;
 }
